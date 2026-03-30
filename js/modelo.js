@@ -7,7 +7,21 @@ function cargarResenas() {
       const contenedor = $("#contenedor-resenas");
       contenedor.empty();
 
-      if (data.length === 0) {
+      // --- Calcular promedio y total ---
+      const total = data.length;
+      const promedio = total > 0
+        ? (data.reduce((sum, r) => sum + r.calificacion, 0) / total).toFixed(1)
+        : "0.0";
+
+      // --- Actualizar el header ---
+      const estrellasLlenas = Math.round(promedio);
+      $(".resenas-rating .estrellas").html(
+        "★".repeat(estrellasLlenas) + "☆".repeat(5 - estrellasLlenas)
+      );
+      $(".rating-text").html(`${promedio} <span>(${total} reseña${total !== 1 ? "s" : ""})</span>`);
+
+      // --- Renderizar reseñas ---
+      if (total === 0) {
         contenedor.html("<p>Aún no hay reseñas. ¡Sé el primero!</p>");
         return;
       }
