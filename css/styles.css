@@ -548,6 +548,10 @@ nav {
 }
 
 /* ── INFORMACION DE CONTACTO ── */
+.star.active {
+  color: gold;
+}
+
 .section-info {
   padding: 90px 5%;
   background: linear-gradient(135deg, var(--azul-noche) 0%, var(--azul-medio) 100%);
