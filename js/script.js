@@ -1,5 +1,15 @@
 $(document).ready(function () {
-//hi
+  const imagenes = document.querySelectorAll('.img-click');
+  const imagenModal = document.getElementById('imagenModal');
+
+  imagenes.forEach(img => {
+    img.addEventListener('click', () => {
+      imagenModal.src = img.src;
+      const modal = new bootstrap.Modal(document.getElementById('modalImagen'));
+      modal.show();
+    });
+  });
+  
   // ── NAV TOGGLE ──
   $('#navToggle').on('click', function () {
     $(this).toggleClass('active');

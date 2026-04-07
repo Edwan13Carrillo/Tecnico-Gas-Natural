@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GasExpertos</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="shortcut icon" href="./favicon/fuego.png" type="image/x-icon" />
   </head>
-|
+
   <body>
     <!-- NAVBAR -->
     <nav>
@@ -33,47 +32,40 @@
 
     <!-- INICIO -->
     <section class="inicio" id="inicio">
-      <div class="inicio-inner">
-        <div class="inicio-text">
-          <h1 class="inicio-title">
-            Tu Técnico de Confianza<br/>
-            en <span>Gas Natural</span>
-          </h1>
-          <p class="inicio-desc">
-            Soy técnico certificado con más de 26 años de experiencia en Bogotá.
-            Ofrezco servicio personalizado, confiable y profesional para tu
-            hogar o negocio.
-          </p>
-          <div class="inicio-btns">
-            <a href="https://wa.me/573125827605" class="btn-primary">
-              <img
-                src="./favicon/burbuja-de-chat.png"
-                alt="WhatsApp"
-                class="ico"
-              />
-              Escribime por WhatsApp
-            </a>
-            <a href="#" class="btn-secondary">
-              <img src="./favicon/telefono.png" alt="Llamar" class="ico" />
-              Llamar ahora
-            </a>
+      <div class="container-xl">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 inicio-text">
+            <h1 class="inicio-title">
+              Tu Técnico de Confianza<br/>
+              en <span>Gas Natural</span>
+            </h1>
+            <p class="inicio-desc">
+              Soy técnico certificado con más de 26 años de experiencia en Bogotá.
+              Ofrezco servicio personalizado, confiable y profesional para tu
+              hogar o negocio.
+            </p>
+            <div class="inicio-btns d-flex flex-wrap gap-3">
+              <a href="https://wa.me/573125827605" class="btn-primary">
+                <img src="./favicon/burbuja-de-chat.png" alt="WhatsApp" class="ico" />
+                Escribime por WhatsApp
+              </a>
+              <a href="#" class="btn-secondary">
+                <img src="./favicon/telefono.png" alt="Llamar" class="ico" />
+                Llamar ahora
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="inicio-image">
-          <div class="inicio-img-wrap">
-            <img
-              src="./img/imgGas.jpg"
-              style="
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 20px;
-              "
-            />
-            <!-- Tarjeta +26 años -->
-            <div class="insignia-experiencia">
-              <span class="insignia-numero">+26 años</span>
-              <span class="insignia-texto">de experiencia</span>
+          <div class="col-lg-6 d-flex justify-content-center inicio-image">
+            <div class="inicio-img-wrap">
+              <img
+                src="./img/imgHome.jpg"
+                class="w-100 h-100 object-fit-cover rounded-4"
+              />
+              <!-- Tarjeta +26 años -->
+              <div class="insignia-experiencia">
+                <span class="insignia-numero">+26 años</span>
+                <span class="insignia-texto">de experiencia</span>
+              </div>
             </div>
           </div>
         </div>
@@ -82,130 +74,99 @@
 
     <!-- TRAYECTORIA -->
     <section class="section-trayectoria" id="trayectoria">
-      <div class="section-header">
-        <h2 class="section-title">Mi Trayectoria</h2>
-        <p class="section-desc">
-          Un camino de dedicación, aprendizaje constante y compromiso con la
-          seguridad de cada cliente, hogar o negocio
-        </p>
-      </div>
-      <div class="trayectoria-inner">
-        <div class="trayectoria-img">
-          <img
-            src="./img/imgStop.jpg"
-            style="width: 100%; height: 100%; object-fit: cover"
-          />
+      <div class="container-xl">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Mi Trayectoria</h2>
+          <p class="section-desc">
+            Un camino de dedicación, aprendizaje constante y compromiso con la
+            seguridad de cada cliente, hogar o negocio
+          </p>
         </div>
-        <div class="trayectoria-cards">
-          <div class="carta-trayectoria">
-            <div class="carta-trayectoria-icon">
-              <img
-                src="./favicon/usuario.png"
-                alt="Primeros Pasos"
-                class="ico"
-              />
-            </div>
-            <div class="carta-trayectoria-body">
-              <div
-                style="
-                  display: flex;
-                  align-items: center;
-                  gap: 0.8rem;
-                  margin-bottom: 0.3rem;
-                "
-              >
-                <h3 style="margin: 0">Primeros Pasos</h3>
-                <div class="card-year">1998</div>
-              </div>
-              <p>
-                Comencé mi carrera como vendedor puerta a puerta en Bogotá
-                entrando a conocer el mercado laboral y técnico en aquella
-                epoca. Con la experiencia que tenia obtive mi primera
-                certificación con ACOGAS como técnico certificado.
-              </p>
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-4">
+            <div class="trayectoria-img">
+              <img src="./img/imgTrayec.jpg" class="w-100 h-100 object-fit-cover" />
             </div>
           </div>
-
-          <div class="carta-trayectoria">
-            <div class="carta-trayectoria-icon">
-              <img src="./favicon/logro.png" alt="Certificación" class="ico" />
-            </div>
-            <div class="carta-trayectoria-body">
-              <div
-                style="
-                  display: flex;
-                  align-items: center;
-                  gap: 0.8rem;
-                  margin-bottom: 0.3rem;
-                "
-              >
-                <h3 style="margin: 0">Certificación Integral</h3>
-                <div class="card-year">2006 - 2026</div>
+          <div class="col-lg-8">
+            <!-- <div class="d-flex flex-column gap-3"> -->
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-1 g-3">
+              <div class="carta-trayectoria col">
+                <div class="carta-trayectoria-icon">
+                  <img src="./favicon/usuario.png" alt="Primeros Pasos" class="ico" />
+                </div>
+                <div class="carta-trayectoria-body">
+                  <div class="d-flex align-items-center gap-3 mb-1">
+                    <h3 class="m-0">Primeros Pasos</h3>
+                    <div class="card-year">1998</div>
+                  </div>
+                  <p>
+                    Comencé mi carrera como vendedor puerta a puerta en Bogotá
+                    entrando a conocer el mercado laboral y técnico en aquella
+                    epoca. Con la experiencia que tenia obtive mi primera
+                    certificación con ACOGAS como técnico certificado.
+                  </p>
+                </div>
               </div>
-              <p>
-                Obtuve mi certificación como técnico integral de gas natural por
-                primera vez en ECOBOSCO, desde entonces eh mantenido mi
-                certificación vigente cumpliendo con los extandares laborales
-                exigidos para la instalación de gas natural.
-              </p>
-            </div>
-          </div>
 
-          <div class="carta-trayectoria">
-            <div class="carta-trayectoria-icon">
-              <img
-                src="./favicon/independiente.png"
-                alt="Independencia"
-                class="ico"
-              />
-            </div>
-            <div class="carta-trayectoria-body">
-              <div
-                style="
-                  display: flex;
-                  align-items: center;
-                  gap: 0.8rem;
-                  margin-bottom: 0.3rem;
-                "
-              >
-                <h3 style="margin: 0">Experiencia Empresarial</h3>
-                <div class="card-year">2005</div>
+              <div class="carta-trayectoria col">
+                <div class="carta-trayectoria-icon">
+                  <img src="./favicon/logro.png" alt="Certificación" class="ico" />
+                </div>
+                <div class="carta-trayectoria-body">
+                  <div class="d-flex align-items-center gap-3 mb-1">
+                    <h3 class="m-0">Certificación Integral</h3>
+                    <div class="card-year">2006 - 2026</div>
+                  </div>
+                  <p>
+                    Obtuve mi certificación como técnico integral de gas natural por
+                    primera vez en ECOBOSCO, desde entonces eh mantenido mi
+                    certificación vigente cumpliendo con los extandares laborales
+                    exigidos para la instalación de gas natural.
+                  </p>
+                </div>
               </div>
-              <p>
-                Trabajé en Gas Fenosa, la cual fue de las empresas pioneras en
-                iniciar la instalación del gas natural en Bogotá D.C, en la que
-                me desempeñé como supervisor de instalaciones. Responsable de
-                hacer cumplir las normativas por sede, llenado de formatos sobre
-                los proyectos, recepción de trabajos en campo como instalaciones
-                y montaje de medidores.
-              </p>
-            </div>
-          </div>
 
-          <div class="carta-trayectoria">
-            <div class="carta-trayectoria-icon">
-              <img src="./favicon/exito.png" alt="Experiencia" class="ico" />
-            </div>
-            <div class="carta-trayectoria-body">
-              <div
-                style="
-                  display: flex;
-                  align-items: center;
-                  gap: 0.8rem;
-                  margin-bottom: 0.3rem;
-                "
-              >
-                <h3 style="margin: 0">Experiencia Independiente</h3>
-                <div class="card-year">2010</div>
+              <div class="carta-trayectoria col">
+                <div class="carta-trayectoria-icon">
+                  <img src="./favicon/independiente.png" alt="Independencia" class="ico" />
+                </div>
+                <div class="carta-trayectoria-body">
+                  <div class="d-flex align-items-center gap-3 mb-1">
+                    <h3 class="m-0">Experiencia Empresarial</h3>
+                    <div class="card-year">2005</div>
+                  </div>
+                  <p>
+                    Trabajé en Gas Fenosa, la cual fue de las empresas pioneras en
+                    iniciar la instalación del gas natural en Bogotá D.C, en la que
+                    me desempeñé como supervisor de instalaciones. Responsable de
+                    hacer cumplir las normativas por sede, llenado de formatos sobre
+                    los proyectos, recepción de trabajos en campo como instalaciones
+                    y montaje de medidores.
+                  </p>
+                </div>
               </div>
-              <p>
-                Inicié operaciones independientes de instalación de gas natural
-                con VANTI en los pueblos de Silvania y posteriormente en Río de
-                Oro, Cesar (2014), desde entonces eh trabajado con clientes
-                residenciales, comerciales e industriales, consolidando más de
-                26 años de servicio técnico en reparaciones y mantenimiento en
-                Bogotá y municipios aledaños.
-              </p>
+
+              <div class="carta-trayectoria col">
+                <div class="carta-trayectoria-icon">
+                  <img src="./favicon/exito.png" alt="Experiencia" class="ico" />
+                </div>
+                <div class="carta-trayectoria-body">
+                  <div class="d-flex align-items-center gap-3 mb-1">
+                    <h3 class="m-0">Experiencia Independiente</h3>
+                    <div class="card-year">2010</div>
+                  </div>
+                  <p>
+                    Inicié operaciones independientes de instalación de gas natural
+                    con VANTI en los pueblos de Silvania y posteriormente en Río de
+                    Oro, Cesar (2014), desde entonces eh trabajado con clientes
+                    residenciales, comerciales e industriales, consolidando más de
+                    26 años de servicio técnico en reparaciones y mantenimiento en
+                    Bogotá y municipios aledaños.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -214,317 +175,167 @@
 
     <!-- SERVICIOS -->
     <section class="section-servicios" id="servicios">
-      <div class="section-header">
-        <h2 class="section-title">Servicios que <br />Ofrezco</h2>
-        <p class="section-desc">
-          Soluciones completas en gas natural con atención personalizada y los
-          más altos estándares de calidad
-        </p>
-      </div>
-      <div class="servicios-grid">
-        <div class="card-servicios">
-          <span class="card-servicios-icon"
-            ><img src="./favicon/reparar.png" alt="" class="ico"
-          /></span>
-          <h3>Instalación de Gas Natural</h3>
-          <p>
-            Instalación completa de redes de gas natural para hogares y negocios
-            con certificación oficial.
+      <div class="container-xl">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Servicios que <br />Ofrezco</h2>
+          <p class="section-desc">
+            Soluciones completas en gas natural con atención personalizada y los
+            más altos estándares de calidad
           </p>
         </div>
-
-        <div class="card-servicios">
-          <span class="card-servicios-icon"
-            ><img
-              src="./favicon/herramienta-de-reparacion.png"
-              alt=""
-              class="ico"
-          /></span>
-          <h3>Mantenimiento Preventivo</h3>
-          <p>
-            Revisiones periódicas y mantenimiento de tus sistemas de gas para
-            garantizar tu seguridad.
-          </p>
-        </div>
-
-        <div class="card-servicios">
-          <span class="card-servicios-icon"
-            ><img src="./favicon/certificado.png" alt="" class="ico"
-          /></span>
-          <h3>Certificaciones</h3>
-          <p>
-            Emito certificados de instalación y conformidad requeridos por las
-            empresas de gas.
-          </p>
-        </div>
-
-        <div class="card-servicios">
-          <span class="card-servicios-icon"
-            ><img src="./favicon/peligro.png" alt="" class="ico"
-          /></span>
-          <h3>Reparaciones de Emergencia</h3>
-          <p>
-            Atención de emergencias para fugas de gas y reparaciones urgentes.
-            Disponible 24/7.
-          </p>
-        </div>
-
-        <div class="card-servicios">
-          <span class="card-servicios-icon"
-            ><img src="./favicon/gas-natural.png" alt="" class="ico"
-          /></span>
-          <h3>Conversión de Sistemas</h3>
-          <p>
-            Convierto sistemas a gas natural desde otros combustibles,
-            optimizando eficiencia y ahorro.
-          </p>
-        </div>
-
-        <div class="card-servicios">
-          <span class="card-servicios-icon"
-            ><img src="./favicon/verificado.png" alt="" class="ico"
-          /></span>
-          <h3>Inspecciones de Seguridad</h3>
-          <p>
-            Inspecciones técnicas completas para detectar riesgos y cumplir con
-            las normativas vigentes.
-          </p>
-        </div>
-
-        <div class="card-servicios">
-          <span class="card-servicios-icon"
-            ><img src="./favicon/casa.png" alt="" class="ico"
-          /></span>
-          <h3>Instalación de Artefactos</h3>
-          <p>
-            Instalo estufas, calentadores, hornos y otros artefactos a gas de
-            forma profesional.
-          </p>
-        </div>
-
-        <div class="card-servicios">
-          <span class="card-servicios-icon"
-            ><img src="./favicon/bolsa-de-dinero.png" alt="" class="ico"
-          /></span>
-          <h3>Pruebas de Consumo Interno</h3>
-          <p>
-            Realizo pruebas de consumo interno, tomas internas para paso de gas
-            regulado y verifico que gasodomésticos funcionen correctamente.
-          </p>
-        </div>
-
-        <div class="card-servicios">
-          <span class="card-servicios-icon"
-            ><img src="./favicon/edificio.png" alt="" class="ico"
-          /></span>
-          <h3>Proyectos Comerciales</h3>
-          <p>
-            Diseño e instalo sistemas de gas para edificios, restaurantes y
-            pequeñas industrias.
-          </p>
+        <div class="row row-cols-2 row-cols-md-2 row-cols-lg-3 g-3 mb-5">
+          <div class="col">
+            <div class="card-servicios">
+              <span class="card-servicios-icon"><img src="./favicon/reparar.png" alt="" class="ico" /></span>
+              <h3>Instalación de Gas Natural</h3>
+              <p>Instalación completa de redes de gas natural para hogares y negocios con certificación oficial.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-servicios">
+              <span class="card-servicios-icon"><img src="./favicon/herramienta-de-reparacion.png" alt="" class="ico" /></span>
+              <h3>Mantenimiento Preventivo</h3>
+              <p>Revisiones periódicas y mantenimiento de tus sistemas de gas para garantizar tu seguridad.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-servicios">
+              <span class="card-servicios-icon"><img src="./favicon/certificado.png" alt="" class="ico" /></span>
+              <h3>Certificaciones</h3>
+              <p>Emito certificados de instalación y conformidad requeridos por las empresas de gas.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-servicios">
+              <span class="card-servicios-icon"><img src="./favicon/peligro.png" alt="" class="ico" /></span>
+              <h3>Reparaciones de Emergencia</h3>
+              <p>Atención de emergencias para fugas de gas y reparaciones urgentes. Disponible 24/7.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-servicios">
+              <span class="card-servicios-icon"><img src="./favicon/gas-natural.png" alt="" class="ico" /></span>
+              <h3>Conversión de Sistemas</h3>
+              <p>Convierto sistemas a gas natural desde otros combustibles, optimizando eficiencia y ahorro.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-servicios">
+              <span class="card-servicios-icon"><img src="./favicon/verificado.png" alt="" class="ico" /></span>
+              <h3>Inspecciones de Seguridad</h3>
+              <p>Inspecciones técnicas completas para detectar riesgos y cumplir con las normativas vigentes.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-servicios">
+              <span class="card-servicios-icon"><img src="./favicon/casa.png" alt="" class="ico" /></span>
+              <h3>Instalación de Artefactos</h3>
+              <p>Instalo estufas, calentadores, hornos y otros artefactos a gas de forma profesional.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-servicios">
+              <span class="card-servicios-icon"><img src="./favicon/bolsa-de-dinero.png" alt="" class="ico" /></span>
+              <h3>Pruebas de Consumo Interno</h3>
+              <p>Realizo pruebas de consumo interno, tomas internas para paso de gas regulado y verifico que gasodomésticos funcionen correctamente.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card-servicios">
+              <span class="card-servicios-icon"><img src="./favicon/edificio.png" alt="" class="ico" /></span>
+              <h3>Proyectos Comerciales</h3>
+              <p>Diseño e instalo sistemas de gas para edificios, restaurantes y pequeñas industrias.</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- GALERÍA DE TRABAJOS -->
       <section class="galeria-trabajos">
-        <div class="section-header">
-          <h2 class="section-title">Galería de Trabajos</h2>
-          <p class="section-desc">
-            Proyectos realizados con profesionalismo y dedicación
-          </p>
-        </div>
-        <!-- El carrusel -->
-        <div class="container-xl my-5">
-          <div id="carruselGas" class="carousel slide rounded-4 shadow-lg overflow-hidden" data-bs-ride="carousel" data-bs-interval="3000">
-            <!-- Slides -->
-            <div class="carousel-inner">
-            
-              <div class="carousel-item active">
-                <div class="d-flex gap-3 p-3">
-                  <div class="carrusel-slide rounded-3 overflow-hidden flex-fill">
-                    <img src="./img/casaantigua.jpg" alt="Trabajo 1" class="w-100 h-100 object-fit-cover" />
+        <div class="container-xl">
+          <div class="text-center mb-4">
+            <h2 class="section-title">Galería de Trabajos</h2>
+            <p class="section-desc">Proyectos realizados con profesionalismo y dedicación</p>
+          </div>
+          <div class="my-4">
+            <div id="carruselGas" class="carousel slide rounded-4 shadow-lg overflow-hidden" data-bs-ride="carousel" data-bs-interval="3000">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="d-flex gap-3 p-3">
+                    <div class="carrusel-slide rounded-3 overflow-hidden flex-fill">
+                      <img src="./img/imgGaleria1.jpg" alt="Trabajo 1" class="w-100 h-100 object-fit-cover img-click" />
+                    </div>
+                    <div class="carrusel-slide rounded-3 overflow-hidden flex-fill">
+                      <img src="./img/imgGaleria2.jpg" alt="Trabajo 2" class="w-100 h-100 object-fit-cover img-click" />
+                    </div>
+                    <div class="carrusel-slide rounded-3 overflow-hidden flex-fill">
+                      <img src="./img/imgGaleria3.jpg" alt="Trabajo 3" class="w-100 h-100 object-fit-cover img-click" />
+                    </div>
                   </div>
-                  <div class="carrusel-slide rounded-3 overflow-hidden flex-fill">
-                    <img src="./img/Fgas.jpg" alt="Trabajo 2" class="w-100 h-100 object-fit-cover" />
-                  </div>
-                  <div class="carrusel-slide rounded-3 overflow-hidden flex-fill">
-                    <img src="./img/fuentegas.jpg" alt="Trabajo 3" class="w-100 h-100 object-fit-cover" />
+                </div>
+                <div class="carousel-item">
+                  <div class="d-flex gap-3 p-3">
+                    <div class="carrusel-slide rounded-3 overflow-hidden flex-fill">
+                      <img src="./img/imgGaleria4.jpg" alt="Trabajo 4" class="w-100 h-100 object-fit-cover img-click" />
+                    </div>
+                    <div class="carrusel-slide rounded-3 overflow-hidden flex-fill">
+                      <img src="./img/imgGaleria5.jpg" alt="Trabajo 5" class="w-100 h-100 object-fit-cover img-click" />
+                    </div>
+                    <div class="carrusel-slide rounded-3 overflow-hidden flex-fill">
+                      <img src="./img/imgGaleria6.jpg" alt="Trabajo 6" class="w-100 h-100 object-fit-cover img-click" />
+                    </div>
                   </div>
                 </div>
               </div>
-            
-              <div class="carousel-item">
-                <div class="d-flex gap-3 p-3">
-                  <div class="carrusel-slide rounded-3 overflow-hidden flex-fill">
-                    <img src="./img/imgGasofa.jpg" alt="Trabajo 4" class="w-100 h-100 object-fit-cover" />
-                  </div>
-                  <div class="carrusel-slide rounded-3 overflow-hidden flex-fill">
-                    <img src="./img/LlavesGas.jpg" alt="Trabajo 5" class="w-100 h-100 object-fit-cover" />
-                  </div>
-                  <div class="carrusel-slide rounded-3 overflow-hidden flex-fill">
-                    <img src="./img/ReguladorGas.jpg" alt="Trabajo 6" class="w-100 h-100 object-fit-cover" />
-                  </div>
-                </div>
-              </div>
-            
-              <!-- Agrega más .carousel-item con grupos de 3 si tienes más fotos -->
-            
-            </div>
-          
-            <!-- Botones prev / next -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carruselGas" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carruselGas" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Siguiente</span>
-            </button>
-          
-          </div>
-        </div>
-        <!--
-        <div class="carrusel-container">
-          <div class="carrusel">
-            // Duplicados al inicio para loop infinito
-            <div class="carrusel-slide">
-              <img src="./img/LlavesGas.jpg" alt="Trabajo 5" />
-            </div>
-            <div class="carrusel-slide">
-              <img src="./img/ReguladorGas.jpg" alt="Trabajo 6" />
-            </div>
-            <div class="carrusel-slide">
-              <img src="./img/casaantigua.jpg" alt="Trabajo 1" />
-            </div>
-
-            // Originales
-            <div class="carrusel-slide">
-              <img src="./img/casaantigua.jpg" alt="Trabajo 3" />
-            </div>
-            <div class="carrusel-slide">
-              <img src="./img/Fgas.jpg" alt="Trabajo 2" />
-            </div>
-            <div class="carrusel-slide">
-              <img src="./img/fuentegas.jpg" alt="Trabajo 3" />
-            </div>
-            <div class="carrusel-slide">
-              <img src="./img/imgGasofa.jpg" alt="Trabajo 4" />
-            </div>
-            <div class="carrusel-slide">
-              <img src="./img/LlavesGas.jpg" alt="Trabajo 5" />
-            </div>
-            <div class="carrusel-slide">
-              <img src="./img/ReguladorGas.jpg" alt="Trabajo 6" />
-            </div>
-
-            // Duplicados al final para loop infinito
-            <div class="carrusel-slide">
-              <img src="./img/casaantigua.jpg" alt="Trabajo 1" />
-            </div>
-            <div class="carrusel-slide">
-              <img src="./img/Fgas.jpg" alt="Trabajo 2" />
-            </div>
-            <div class="carrusel-slide">
-              <img src="./img/fuentegas.jpg" alt="Trabajo 3" />
+              <button class="carousel-control-prev" type="button" data-bs-target="#carruselGas" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carruselGas" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+              </button>
             </div>
           </div>
-
-          <button class="carrusel-btn carrusel-prev" id="carruselPrev">
-            ❮
-          </button>
-          <button class="carrusel-btn carrusel-next" id="carruselNext">
-            ❯
-          </button>
-
-          <div class="carrusel-dots" id="carruselDots"></div>
         </div>
-       -->
       </section>
 
       <!-- Carta destacada -->
-      <div class="card-destacada">
-        <div class="card-destacada-img">
-          <img
-            src="./img/imgGasofa.jpg"
-            style="width: 100%; height: 100%; object-fit: cover"
-          />
-        </div>
-        <div class="card-destacada-content">
-          <h2>¿Por qué elegirme?</h2>
-          <p
-            style="
-              color: rgba(255, 255, 255, 0.7);
-              font-size: 0.95rem;
-              line-height: 1.7;
-            "
-          >
-            Trabajo con profesionalismo, seguridad y honestidad. Tu confianza es
-            mi compromiso.
-          </p>
-          <div class="card-destacada-subtitles">
-            <div class="subtitulo">
-              <h4>
-                <img src="./favicon/verificado.png" alt="" class="ico-small" />
-                Honestidad y Transparencia
-              </h4>
-              <p>
-                Trabajo con honestidad en cada proceso, estaras informado en
-                todo momento, antes del servicio, durante el servicio y después
-                del mismo.
-              </p>
-            </div>
-            <div class="subtitulo">
-              <h4>
-                <img src="./favicon/peligro.png" alt="" class="ico-small" />
-                Seguridad Garantizada
-              </h4>
-              <p>
-                Seguridad en el proceso y garantía post-servicio sin fugas en
-                componentes.
-              </p>
-            </div>
-            <div class="subtitulo">
-              <h4>
-                <img src="./favicon/certificado.png" alt="" class="ico-small" />
-                Materiales Certificados
-              </h4>
-              <p>
-                Uso de repuestos originales y materiales de calidad en cada
-                instalación.
-              </p>
-            </div>
-            <div class="subtitulo">
-              <h4>
-                <img
-                  src="./favicon/atencion-al-cliente.png"
-                  alt=""
-                  class="ico-small"
-                />
-                Atención al Cliente
-              </h4>
-              <p>
-                Buena atención y servicio personalizado que se adapta a tus
-                necesidades.
-              </p>
-            </div>
-            <div class="subtitulo">
-              <h4>
-                <img src="./favicon/tiempo.png" alt="" class="ico-small" />
-                Respeto y Cumplimiento
-              </h4>
-              <p>
-                Puntualidad, profesionalismo y compromiso en cada servicio
-                realizado.
-              </p>
-            </div>
-            <div class="subtitulo">
-              <h4>
-                <img src="./favicon/corazon.png" alt="" class="ico-small" />
-                Dedicación Profesional
-              </h4>
-              <p>
-                Más de 26 años de experiencia trabajando con pasión y calidad.
-              </p>
+      <div class="container-xl pb-5">
+        <div class="card-destacada d-flex flex-column flex-md-row">
+          <div class="card-destacada-img">
+            <img src="./img/imgEleccion.jpg" class="w-100 h-100 object-fit-cover" />
+          </div>
+          <div class="card-destacada-content">
+            <h2>¿Por qué elegirme?</h2>
+            <p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; line-height: 1.7;">
+              Trabajo con profesionalismo, seguridad y honestidad. Tu confianza es mi compromiso.
+            </p>
+            <div class="row row-cols-1 row-cols-lg-3 g-4 mt-2">
+              <div class="col subtitulo">
+                <h4><img src="./favicon/verificado.png" alt="" class="ico-small" />Honestidad y Transparencia</h4>
+                <p>Trabajo con honestidad en cada proceso, estaras informado en todo momento, antes del servicio, durante el servicio y después del mismo.</p>
+              </div>
+              <div class="col subtitulo">
+                <h4><img src="./favicon/peligro.png" alt="" class="ico-small" />Seguridad Garantizada</h4>
+                <p>Seguridad en el proceso y garantía post-servicio sin fugas en componentes.</p>
+              </div>
+              <div class="col subtitulo">
+                <h4><img src="./favicon/certificado.png" alt="" class="ico-small" />Materiales Certificados</h4>
+                <p>Uso de repuestos originales y materiales de calidad en cada instalación.</p>
+              </div>
+              <div class="col subtitulo">
+                <h4><img src="./favicon/atencion-al-cliente.png" alt="" class="ico-small" />Atención al Cliente</h4>
+                <p>Buena atención y servicio personalizado que se adapta a tus necesidades.</p>
+              </div>
+              <div class="col subtitulo">
+                <h4><img src="./favicon/tiempo.png" alt="" class="ico-small" />Respeto y Cumplimiento</h4>
+                <p>Puntualidad, profesionalismo y compromiso en cada servicio realizado.</p>
+              </div>
+              <div class="col subtitulo">
+                <h4><img src="./favicon/corazon.png" alt="" class="ico-small" />Dedicación Profesional</h4>
+                <p>Más de 26 años de experiencia trabajando con pasión y calidad.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -533,103 +344,87 @@
 
     <!-- INFORMACION DE CONTACTO -->
     <section class="section-info" id="contactar">
-      <div class="section-header">
-        <h2 class="section-title">Contáctame</h2>
-        <p class="section-desc">
-          Estoy listo para atender tus necesidades. Contáctame hoy mismo y
-          recibe atención directa y personalizada
-        </p>
-      </div>
-
-      <div class="info-contenedor">
-        <!-- Información de Contacto -->
-        <div class="info-informacion">
-          <h3>Información de Contacto</h3>
-
-          <div class="info-item">
-            <span class="info-icon"
-              ><img src="./favicon/ubicacion.png" alt="Ubicación" class="ico"
-            /></span>
-            <div class="info-contenido">
-              <h4>Zona de Servicio</h4>
-              <p>Bogotá D.C., Colombia</p>
-              <small>Atiendo toda la ciudad y municipios cercanos</small>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <span class="info-icon"
-              ><img src="./favicon/telefono.png" alt="Teléfono" class="ico"
-            /></span>
-            <div class="info-contenido">
-              <h4>Teléfono</h4>
-              <p>+57 312 5827605</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <span class="info-icon"
-              ><img
-                src="./favicon/burbuja-de-chat.png"
-                alt="WhatsApp"
-                class="ico"
-            /></span>
-            <div class="info-contenido">
-              <h4>WhatsApp (Preferido)</h4>
-              <p>+57 312 5827605</p>
-              <small>Disponible para emergencias 24/7</small>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <span class="info-icon"
-              ><img src="./favicon/correo.png" alt="Email" class="ico"
-            /></span>
-            <div class="info-contenido">
-              <h4>Email</h4>
-              <p>tecnico@gasnatural.com</p>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <span class="info-icon"
-              ><img src="./favicon/tiempo.png" alt="Horario" class="ico"
-            /></span>
-            <div class="info-contenido">
-              <h4>Horario de Atención</h4>
-              <p>Disponible las 24 horas del dia, los 7 dias de la semana</p>
-            </div>
-          </div>
+      <div class="container-xl">
+        <div class="text-center mb-5">
+          <h2 class="section-title">Contáctame</h2>
+          <p class="section-desc">
+            Estoy listo para atender tus necesidades. Contáctame hoy mismo y
+            recibe atención directa y personalizada
+          </p>
         </div>
+        <div class="row g-4 align-items-start">
+          <!-- Información de Contacto -->
+          <div class="col-lg-8">
+            <div class="info-informacion d-flex flex-column gap-3">
+              <h3>Información de Contacto</h3>
 
-        <!-- Tarjeta de Cotización -->
-        <div class="cotizacion-tarjeta">
-          <h3>Solicita una Cotización</h3>
-          <p>
-            Escribeme por WhatsApp para recibir una cotización personalizada sin
-            compromiso. Te responderé personalmente.
-          </p>
+              <div class="info-item d-flex gap-3">
+                <span class="info-icon"><img src="./favicon/ubicacion.png" alt="Ubicación" class="ico" /></span>
+                <div class="info-contenido">
+                  <h4>Zona de Servicio</h4>
+                  <p>Bogotá D.C., Colombia</p>
+                  <small>Atiendo toda la ciudad y municipios cercanos</small>
+                </div>
+              </div>
 
-          <a
-            href="https://wa.me/573125827605"
-            class="btn-whatsapp"
-            target="_blank"
-          >
-            Abrir WhatsApp
-          </a>
+              <div class="info-item d-flex gap-3">
+                <span class="info-icon"><img src="./favicon/telefono.png" alt="Teléfono" class="ico" /></span>
+                <div class="info-contenido">
+                  <h4>Teléfono</h4>
+                  <p>+57 312 5827605</p>
+                </div>
+              </div>
 
-          <hr class="separador" />
+              <div class="info-item d-flex gap-3">
+                <span class="info-icon"><img src="./favicon/burbuja-de-chat.png" alt="WhatsApp" class="ico" /></span>
+                <div class="info-contenido">
+                  <h4>WhatsApp (Preferido)</h4>
+                  <p>+57 312 5827605</p>
+                  <small>Disponible para emergencias 24/7</small>
+                </div>
+              </div>
 
-          <h4>Servicio de Emergencia</h4>
-          <p>
-            Si detectas olor a gas o tienes una emergencia, contáctame
-            inmediatamente. Ofrezco servicio de respuesta rápida las 24 horas
-            del día.
-          </p>
+              <div class="info-item d-flex gap-3">
+                <span class="info-icon"><img src="./favicon/correo.png" alt="Email" class="ico" /></span>
+                <div class="info-contenido">
+                  <h4>Email</h4>
+                  <p>gasexpertos@gmail.com</p>
+                </div>
+              </div>
 
-          <div class="alerta-emergencia">
-            ⚠️ En caso de fuga de gas: cierra la válvula principal, ventila el
-            área, no uses equipos eléctricos ni llames de inmediato.
+              <div class="info-item d-flex gap-3">
+                <span class="info-icon"><img src="./favicon/tiempo.png" alt="Horario" class="ico" /></span>
+                <div class="info-contenido">
+                  <h4>Horario de Atención</h4>
+                  <p>Disponible las 24 horas del dia, los 7 dias de la semana</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tarjeta de Cotización -->
+          <div class="col-lg-4">
+            <div class="cotizacion-tarjeta">
+              <h3>Solicita una Cotización</h3>
+              <p>
+                Escribeme por WhatsApp para recibir una cotización personalizada sin
+                compromiso. Te responderé personalmente.
+              </p>
+              <a href="https://wa.me/573125827605" class="btn-whatsapp" target="_blank">
+                Abrir WhatsApp
+              </a>
+              <hr class="separador" />
+              <h4>Servicio de Emergencia</h4>
+              <p>
+                Si detectas olor a gas o tienes una emergencia, contáctame
+                inmediatamente. Ofrezco servicio de respuesta rápida las 24 horas
+                del día.
+              </p>
+              <div class="alerta-emergencia">
+                ⚠️ En caso de fuga de gas: cierra la válvula principal, ventila el
+                área, no uses equipos eléctricos ni llames de inmediato.
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -637,69 +432,62 @@
 
     <!-- RESEÑAS DE CLIENTES -->
     <section class="section-resenas">
-      <div class="section-header">
-        <h2 class="section-title">Reseñas de Clientes</h2>
-        <div class="resenas-rating">
-          <div class="estrellas">
-            <span class="estrella">★</span>
-            <span class="estrella">★</span>
-            <span class="estrella">★</span>
-            <span class="estrella">★</span>
-            <span class="estrella">★</span>
+      <div class="container-xl">
+        <div class="text-center mb-4">
+          <h2 class="section-title">Reseñas de Clientes</h2>
+          <div class="d-flex justify-content-center align-items-center gap-4 my-4">
+            <div class="estrellas">
+              <span class="estrella">★</span>
+              <span class="estrella">★</span>
+              <span class="estrella">★</span>
+              <span class="estrella">★</span>
+              <span class="estrella">★</span>
+            </div>
+            <p class="rating-text mb-0">0.0 <span>(0 reseñas)</span></p>
           </div>
-          <p class="rating-text">5.0 <span>(3 reseñas)</span></p>
-        </div>
-        <p class="section-desc">
-          La satisfacción de mis clientes es mi mejor carta de presentación
-        </p>
-      </div>
-
-      <div class="resenas-container">
-        <!-- Formulario -->
-        <div class="resena-formulario">
-          <h3>Deja tu Reseña</h3>
-          <form id="formularioResena">
-            <div class="form-group">
-              <label for="nombre">Tu Nombre</label>
-              <input
-                type="text"
-                id="nombre"
-                placeholder="Escribe tu nombre"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label>Calificación</label>
-              <div class="rating-input" id="ratingInput">
-                <span class="star" data-value="1">★</span>
-                <span class="star" data-value="2">★</span>
-                <span class="star" data-value="3">★</span>
-                <span class="star" data-value="4">★</span>
-                <span class="star" data-value="5">★</span>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="comentario">Tu Comentario</label>
-              <textarea
-                id="comentario"
-                placeholder="Cuéntanos tu experiencia..."
-                rows="5"
-                maxlength="200"
-                required
-              ></textarea>
-              <small id="charCount">0/200 caracteres</small>
-            </div>
-
-            <button type="submit" class="btn-submit">Publicar Reseña</button>
-          </form>
+          <p class="section-desc">La satisfacción de mis clientes es mi mejor carta de presentación</p>
         </div>
 
-        <!-- Lista de reseñas -->
-        <div class="resenas-lista">
-          <h3>Lo que dicen mis clientes</h3>
-          <div id="contenedor-resenas"></div>
+        <div class="row g-4">
+          <!-- Formulario -->
+          <div class="col-lg-5">
+            <div class="resena-formulario">
+              <h3>Deja tu Reseña</h3>
+              <form id="formularioResena">
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Tu Nombre</label>
+                  <input type="text" id="nombre" class="form-control" placeholder="Escribe tu nombre" required />
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Calificación</label>
+                  <div class="rating-input" id="ratingInput">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="comentario" class="form-label">Tu Comentario</label>
+                  <textarea id="comentario" class="form-control" placeholder="Cuéntanos tu experiencia..." rows="5" maxlength="200" required></textarea>
+                  <small id="charCount" class="text-muted d-block mt-1">0/200 caracteres</small>
+                </div>
+
+                <button type="submit" class="btn-submit">Publicar Reseña</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Lista de reseñas -->
+          <div class="col-lg-7">
+            <div class="resenas-lista d-flex flex-column gap-4">
+              <h3>Lo que dicen mis clientes</h3>
+              <div id="contenedor-resenas"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -713,11 +501,19 @@
         gas
       </p>
     </footer>
+
+    <div class="modal fade" id="modalImagen" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content bg-transparent border-0">
+          <img id="imagenModal" class="w-100 rounded-3">
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <script src="./js/script.js"></script>
-  
     <script src="./js/modelo.js"></script>
   </body>
 </html>
