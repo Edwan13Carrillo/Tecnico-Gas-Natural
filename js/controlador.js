@@ -77,16 +77,6 @@ function validarAntesDeEnviar() {
   return false;
   }
 
-  // Evitar envíos múltiples
-  const ahora = Date.now();
-  const ultimoEnvio = localStorage.getItem("ultimoEnvio");
-
-  if (ultimoEnvio && (ahora - ultimoEnvio < 10000)) {
-    Toast.fire({ icon: "warning", title: "Espera unos segundos antes de enviar otra reseña." });
-    return false;
-  }
-  localStorage.setItem("ultimoEnvio", ahora);
-
   // Validaciones de campos
   const nombre     = $("#nombre").val().trim();
   const comentario = $("#comentario").val().trim();
@@ -117,6 +107,17 @@ function validarAntesDeEnviar() {
     Toast.fire({ icon: "warning", title: "Debes aceptar los Términos y Condiciones y la Política de Privacidad." });
     return false;
   }
+
+  // Evitar envíos múltiples
+  const ahora = Date.now();
+  const ultimoEnvio = localStorage.getItem("ultimoEnvio");
+
+  if (ultimoEnvio && (ahora - ultimoEnvio < 10000)) {
+    Toast.fire({ icon: "warning", title: "Espera unos segundos antes de enviar otra reseña." });
+    return false;
+  }
+  localStorage.setItem("ultimoEnvio", ahora);
+
   return true;
 }
 
