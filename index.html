@@ -475,6 +475,17 @@
                   <textarea id="comentario" class="form-control" placeholder="Cuéntanos tu experiencia..." rows="5" maxlength="200" required></textarea>
                   <small id="charCount" class="text-muted d-block mt-1">0/200 caracteres</small>
                 </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="aceptaTerminos" required>
+                  <label class="form-check-label small text-muted" for="aceptaTerminos">
+                    He leído y acepto los 
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalTyC">Términos y Condiciones</a>
+                    y la 
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#modalPrivacidad">Política de Privacidad</a>
+                  </label>
+                </div>
+
+                <input type="text" id="website" style="display:none">
 
                 <button type="submit" class="btn-submit">Publicar Reseña</button>
               </form>
@@ -493,13 +504,18 @@
     </section>
 
     <!-- FOOTER-->
-    <footer>
-      <p>
-        © 2025 <strong>GasExpertos</strong> · Todos los derechos reservados ·
-        Hecho con
-        <img src="./favicon/fuego.png" alt="fuego" class="footer-ico" /> y mucho
-        gas
-      </p>
+    <footer class="py-4">
+      <div class="container text-center">
+        <p class="mb-2">
+          © 2025 <strong>GasExpertos</strong> · Todos los derechos reservados ·
+          Hecho con
+          <img src="./favicon/fuego.png" alt="fuego" class="footer-ico" /> y mucho gas
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#" class="text-decoration-none text-light small" data-bs-toggle="modal" data-bs-target="#modalTyC">Términos y Condiciones</a>
+          <a href="#" class="text-decoration-none text-light small" data-bs-toggle="modal" data-bs-target="#modalPrivacidad">Política de Privacidad</a>
+        </div>
+      </div>
     </footer>
 
     <div class="modal fade" id="modalImagen" tabindex="-1">
@@ -510,10 +526,169 @@
       </div>
     </div>
 
+    <div class="modal fade" id="modalTyC" tabindex="-1" aria-labelledby="modalTyCTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header bg-dark text-white">
+            <h5 class="modal-title" id="modalTyCTitle">Términos y Condiciones de Uso</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <p class="text-muted small">Última actualización: 07 de abril de 2026</p>
+          
+            <h6>1. Introducción</h6>
+            <p>Bienvenido a <strong>GasExpertos</strong> (en adelante “el Sitio”). Este es el sitio web de un servicio independiente de gas en Bogotá D.C. Al acceder y utilizar este Sitio, aceptas estos Términos y Condiciones. Si no estás de acuerdo, por favor no lo uses.</p>
+          
+            <h6>2. Descripción del Sitio</h6>
+            <p>El Sitio tiene carácter <strong>informativo</strong>. Muestra:</p>
+            <ul>
+              <li>Qué hago (servicios de gas),</li>
+              <li>Mi historia,</li>
+              <li>Botones para llamarme o escribirme por WhatsApp.</li>
+            </ul>
+            <p><strong>Importante:</strong> Las contrataciones reales del servicio de gas se realizan directamente por teléfono o WhatsApp. Este Sitio <strong>no</strong> es una tienda ni realiza reservas ni cobros en línea. El servicio se limita exclusivamente al área urbana de Bogotá D.C. Cualquier solicitud fuera de esta zona quedará sujeta a disponibilidad y costos adicionales de desplazamiento.</p>
+          
+            <h6>3. Contenido Generado por los Usuarios (Reseñas)</h6>
+            <p>El Sitio cuenta con un formulario de reseñas público y sin registro. Cualquier persona puede dejar:</p>
+            <ul>
+              <li>Su nombre,</li>
+              <li>Cantidad de estrellas (1 a 5),</li>
+              <li>Un comentario.</li>
+            </ul>
+            <p>Al enviar una reseña aceptas que:</p>
+            <ul>
+              <li>La reseña se publique públicamente en el Sitio.</li>
+              <li>Me das permiso irrevocable para mostrarla, editarla (solo para corregir errores de ortografía o eliminar palabras ofensivas) o eliminarla en cualquier momento y sin necesidad de avisarte.</li>
+              <li>Eres el único responsable del contenido de tu reseña. No debe contener información falsa, ofensiva, difamatoria, ilegal o que viole derechos de terceros.</li>
+              <li>No recibirás ninguna compensación por tu reseña.</li>
+            </ul>
+            <p>Me reservo el derecho de <strong>no publicar o eliminar</strong> en cualquier momento reseñas que contengan lenguaje ofensivo, spam, información falsa o que no correspondan a un servicio efectivamente prestado.</p>
+          
+            <h6>4. Uso Permitido y Prohibido</h6>
+            <p>Está permitido usar el Sitio solo para:</p>
+            <ul>
+              <li>Informarte sobre mis servicios,</li>
+              <li>Dejar una reseña honesta,</li>
+              <li>Contactarme por teléfono o WhatsApp.</li>
+            </ul>
+            <p>Está <strong>prohibido</strong>:</p>
+            <ul>
+              <li>Copiar, reproducir o distribuir el contenido del Sitio sin mi autorización.</li>
+              <li>Enviar reseñas falsas o de mala fe.</li>
+              <li>Intentar interferir con el funcionamiento del formulario o del Sitio.</li>
+            </ul>
+          
+            <h6>5. Propiedad Intelectual</h6>
+            <p>Todos los textos, fotos, diseño y contenido del Sitio son de mi propiedad o tengo licencia para usarlos. Queda prohibido su uso sin mi permiso por escrito.</p>
+          
+            <h6>6. Privacidad y Protección de Datos</h6>
+            <p>Los datos que recolecto (nombre y comentario en las reseñas) se tratan de acuerdo con la <strong>Ley 1581 de 2012</strong> (Protección de Datos Personales) de Colombia.<br>
+            Solo uso estos datos para mostrar las reseñas en el Sitio. No los vendo ni los comparto con terceros, salvo obligación legal.<br>
+            Para más detalles consulta nuestra <strong>Política de Privacidad</strong>.</p>
+            
+            <h6>7. Limitación de Responsabilidad</h6>
+            <p>El Sitio se ofrece “tal cual”. No garantizo que esté siempre disponible o libre de errores.<br>
+            No soy responsable de:</p>
+            <ul>
+              <li>Daños que puedan surgir por el uso del Sitio,</li>
+              <li>Contenido de las reseñas (son opiniones de terceros),</li>
+              <li>Cualquier problema que tengas con el servicio de gas una vez contratado (eso se resuelve directamente entre tú y yo).</li>
+            </ul>
+          
+            <h6>8. Modificaciones</h6>
+            <p>Puedo actualizar estos Términos cuando sea necesario. La fecha de la última actualización aparecerá al principio. Si sigues usando el Sitio después de los cambios, se entiende que los aceptas.</p>
+          
+            <h6>9. Ley Aplicable</h6>
+            <p>Estos Términos se rigen por las leyes de la <strong>República de Colombia</strong>. Cualquier disputa se resolverá ante los jueces de <strong>Bogotá D.C.</strong></p>
+          
+            <h6>10. Contacto</h6>
+            <p>Cualquier duda sobre estos Términos puedes escribirme a:</p>
+            <p><strong>WhatsApp:</strong> +57 312 5827605<br>
+               <strong>Teléfono:</strong> +57 312 5827605<br>
+               <strong>Correo:</strong> gasexpertos@gmail.com</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalPrivacidad" tabindex="-1" aria-labelledby="modalPrivacidadTitle" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-header bg-dark text-white">
+            <h5 class="modal-title" id="modalPrivacidadTitle">Política de Privacidad</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <p class="text-muted small">Última actualización: 07 de abril de 2026</p>
+          
+            <h6>1. Introducción</h6>
+            <p>En <strong>GasExpertos</strong> (en adelante “el Sitio”) respetamos tu privacidad. Esta Política de Privacidad explica qué información recolectamos, cómo la usamos y cómo la protegemos.</p>
+            <p>Al usar este Sitio aceptas las prácticas descritas aquí. Si no estás de acuerdo, por favor no utilices el Sitio.</p>
+          
+            <h6>2. Información que recolectamos</h6>
+            <p>Solo recolectamos la información mínima necesaria:</p>
+            <ul>
+              <li><strong>Reseñas públicas</strong>: Cuando envías una reseña recolectamos nombre, cantidad de estrellas (1 a 5) y comentario. Estas reseñas se publican <strong>públicamente</strong> en el Sitio.</li>
+              <li><strong>Datos de contacto</strong>: Si nos escribes por WhatsApp o nos llamas, recibimos tu número de teléfono y el contenido del mensaje.</li>
+            </ul>
+            <p><strong>No recolectamos</strong>: correos electrónicos, datos de tarjetas, cuentas de usuario, dirección IP ni ningún dato técnico de seguimiento.</p>
+          
+            <h6>3. Cómo usamos tu información</h6>
+            <p>Usamos la información exclusivamente para:</p>
+            <ul>
+              <li>Mostrar tus reseñas públicamente en el Sitio,</li>
+              <li>Responder a tus mensajes de WhatsApp o llamadas,</li>
+              <li>Mejorar el servicio de gas que ofrezco.</li>
+            </ul>
+            <p><strong>Nunca</strong> usamos tus datos para publicidad, marketing ni para venderlos a terceros. Al enviar una reseña o contactarme por WhatsApp, autorizas de manera previa, expresa e informada el tratamiento de tus datos personales para las finalidades aquí descritas.</p>
+          
+            <h6>4. Compartir información</h6>
+            <p>No vendemos, alquilamos ni compartimos tus datos personales con terceros, salvo:</p>
+            <ul>
+              <li>Cuando sea obligatorio por ley (por ejemplo, requerimiento de un juez en Colombia).</li>
+              <li>Para proteger nuestros derechos o la seguridad del Sitio.</li>
+            </ul>
+            <p>Las reseñas que publicas son visibles para todo el mundo.</p>
+          
+            <h6>5. Tus derechos (Ley 1581 de 2012)</h6>
+            <p>Como titular de los datos tienes derecho a:</p>
+            <ul>
+              <li>Conocer qué datos tengo de ti</li>
+              <li>Solicitar que corrija o actualice tus datos</li>
+              <li>Pedir que elimine tu reseña (puedes pedírmelo en cualquier momento)</li>
+              <li>Revocar tu autorización para el tratamiento de tus datos</li>
+            </ul>
+            <p>Para ejercer cualquiera de estos derechos solo escríbeme por <strong>WhatsApp</strong> o al teléfono que aparece en el Sitio.</p>
+          
+            <h6>6. Seguridad de la información</h6>
+            <p>Aunque el Sitio es muy básico, tomo medidas razonables para proteger la información que recolecto. Sin embargo, ninguna transmisión por internet es 100% segura.</p>
+          
+            <h6>7. Cookies y tecnologías similares</h6>
+            <p>Este Sitio <strong>no utiliza cookies</strong> ni herramientas de seguimiento (Google Analytics, Facebook Pixel, etc.).</p>
+          
+            <h6>8. Cambios en esta Política</h6>
+            <p>Puedo actualizar esta Política de Privacidad cuando sea necesario. La fecha de la última actualización aparecerá al principio. Si sigues usando el Sitio después de los cambios, se entiende que aceptas la nueva versión.</p>
+          
+            <h6>9. Contacto</h6>
+            <p>Cualquier duda o solicitud sobre tu privacidad puedes enviármela directamente a:</p>
+            <p><strong>WhatsApp:</strong> +57 312 5827605<br>
+               <strong>Teléfono:</strong> +57 312 5827605<br>
+               <strong>Correo:</strong> gasexpertos@gmail.com</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendido</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-    <script src="./js/script.js"></script>
-    <script src="./js/modelo.js"></script>
+    <script src="./js/controlador.js"></script>
+    <script src="./js/vista.js"></script>
   </body>
 </html>

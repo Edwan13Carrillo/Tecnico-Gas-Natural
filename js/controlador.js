@@ -1,0 +1,186 @@
+// ─────────────────────────────────────────────
+//  controlador.js  |  Lógica / Back
+//  Expone: `calificacionSeleccionada` (global, usada también en vista.js)
+// ─────────────────────────────────────────────
+
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbypkJwD0KbWyr2wYMBIDsFBlxbZ_GAjNR3MCCM8r__09GkozDtHWIWzG3JVIUgKWF2x3w/exec";
+
+// Variable compartida con script.js para el rating seleccionado
+let calificacionSeleccionada = 0;
+
+$(document).ready(function() {
+    $('#formularioResena')[0].reset();
+    
+    $('.star').removeClass('active');
+});
+
+// ── CARGAR RESEÑAS ──
+function cargarResenas() {
+  fetch(SCRIPT_URL, { redirect: "follow" })
+    .then(res => res.json())
+    .then(data => {
+      const contenedor = $("#contenedor-resenas");
+      contenedor.empty();
+
+      const total    = data.length;
+      const promedio = total > 0
+        ? (data.reduce((sum, r) => sum + r.calificacion, 0) / total).toFixed(1)
+        : "0.0";
+
+      const estrellasLlenas = Math.round(promedio);
+      $(".resenas-rating .estrellas").html(
+        "★".repeat(estrellasLlenas) + "☆".repeat(5 - estrellasLlenas)
+      );
+      $(".rating-text").html(
+        `${promedio} <span>(${total} reseña${total !== 1 ? "s" : ""})</span>`
+      );
+
+      if (total === 0) {
+        contenedor.html("<p>Aún no hay reseñas. ¡Sé el primero!</p>");
+        return;
+      }
+
+      data.forEach(resena => {
+        const estrellas = "★".repeat(resena.calificacion) + "☆".repeat(5 - resena.calificacion);
+        contenedor.append(`
+          <div class="resena-card">
+            <div class="resena-header">
+              <strong>${resena.nombre}</strong>
+              <span class="estrellas">${estrellas}</span>
+            </div>
+            <p class="resena-comentario">${resena.comentario}</p>
+            <small class="resena-fecha">${new Date(resena.fecha).toLocaleDateString("es-CO")}</small>
+          </div>
+        `);
+      });
+    })
+    .catch(err => {
+      console.error("Error:", err);
+      $("#contenedor-resenas").html("<p>No se pudieron cargar las reseñas.</p>");
+    });
+}
+
+// ── VALIDACIÓN ──
+function validarAntesDeEnviar() {
+  // Honeypot para bots
+  if ($("#website").val()) {
+  return false;
+  }
+
+  // Evitar envíos múltiples
+  /*
+  const ahora = Date.now();
+  const ultimoEnvio = localStorage.getItem("ultimoEnvio");
+
+  if (ultimoEnvio && (ahora - ultimoEnvio < 10000)) {
+    alert("Espera unos segundos antes de enviar otra reseña.");
+    return false;
+  }
+  localStorage.setItem("ultimoEnvio", ahora);
+  */
+
+  // Validaciones de campos
+  const nombre     = $("#nombre").val().trim();
+  const comentario = $("#comentario").val().trim();
+
+  console.log(nombre);
+  console.log(nombre.length);
+  console.log(calificacionSeleccionada);
+  console.log(comentario);
+  console.log($("#aceptaTerminos").is(":checked"));
+  
+  
+  if (calificacionSeleccionada === 0) {
+    alert("Por favor selecciona una calificación.");
+    return false;
+  }
+
+  if (!nombre || nombre.length > 50 || !/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre)) {
+    alert("El nombre es obligatorio y no puede exceder los 50 caracteres.");
+    return false;
+  }
+  if (!comentario || comentario.length > 200) {
+    alert("El comentario es obligatorio y no puede exceder los 200 caracteres");
+    return false;
+  }
+  if (
+    /(https?:\/\/|www\.)\S+/.test(comentario) || 
+    /[<>${}|\\^~\[\]`]/.test(comentario) || 
+    /^[=+\-@]/.test(comentario)  || 
+    /(.)\1{4,}/.test(comentario)
+  ){
+    alert("El comentario no puede contener enlaces o spam.");
+    return false;
+  }
+
+  if (!$("#aceptaTerminos").is(":checked")) {
+    alert("Debes aceptar los Términos y Condiciones y la Política de Privacidad.");
+    return false;
+  }
+
+  /*
+  const campos = {
+      nombre: $("#nombre"),
+      comentario: $("#comentario")
+  };
+
+  limpiarCampos(campos);
+  */
+  
+  return true;
+}
+/*
+function limpiarCampos(campos) {
+  for (const key in campos) {
+    if (campos.hasOwnProperty(key)) {
+      campos[key].val('');
+    }
+  }
+}
+*/
+// ── ENVÍO DEL FORMULARIO ──
+$(document).ready(function () {
+  cargarResenas();
+
+  $("#formularioResena").on("submit", function (e) {
+    e.preventDefault();
+
+    if (!validarAntesDeEnviar()) return;
+
+    console.log("Todo melo melito");
+    
+    /*
+    const datos = {
+      nombre:        $("#nombre").val().trim(),
+      calificacion:  calificacionSeleccionada,
+      comentario:    $("#comentario").val().trim()
+    };
+
+    const btn = $(".btn-submit");
+    btn.text("Enviando...").prop("disabled", true);
+
+    fetch(SCRIPT_URL, {
+      method:   "POST",
+      redirect: "follow",
+      headers:  { "Content-Type": "application/x-www-form-urlencoded" },
+      body:     new URLSearchParams(datos).toString()
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.ok) {
+          alert("¡Gracias por tu reseña! Será publicada pronto.");
+          $("#formularioResena")[0].reset();
+          calificacionSeleccionada = 0;
+          $("#ratingInput .star").removeClass("active");
+          $("#charCount").text("0/200 caracteres");
+        }
+      })
+      .catch(() => {
+        alert("Hubo un error al enviar. Intenta de nuevo.");
+      })
+      .finally(() => {
+        btn.text("Publicar Reseña").prop("disabled", false);
+      });
+    */
+  });
+});

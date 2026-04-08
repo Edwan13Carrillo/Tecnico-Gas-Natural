@@ -1,15 +1,19 @@
-$(document).ready(function () {
-  const imagenes = document.querySelectorAll('.img-click');
-  const imagenModal = document.getElementById('imagenModal');
+// ─────────────────────────────────────────────
+//  vista.js  |  Visual / UI
+//  Depende de: controlador.js (expone `calificacionSeleccionada`)
+// ─────────────────────────────────────────────
 
-  imagenes.forEach(img => {
+$(document).ready(function () {
+
+  // ── MODAL DE IMÁGENES ──
+  const imagenModal = document.getElementById('imagenModal');
+  document.querySelectorAll('.img-click').forEach(img => {
     img.addEventListener('click', () => {
       imagenModal.src = img.src;
-      const modal = new bootstrap.Modal(document.getElementById('modalImagen'));
-      modal.show();
+      new bootstrap.Modal(document.getElementById('modalImagen')).show();
     });
   });
-  
+
   // ── NAV TOGGLE ──
   $('#navToggle').on('click', function () {
     $(this).toggleClass('active');
@@ -22,13 +26,13 @@ $(document).ready(function () {
   });
 
   // ── CARRUSEL ──
-  const $carrusel = $('.carrusel');
+  const $carrusel     = $('.carrusel');
   const $carruselDots = $('#carruselDots');
 
   const totalOriginalSlides = 6;
-  const itemsPerView = 3;
-  let currentSlide = 3;
-  let autoplayInterval;
+  const itemsPerView        = 3;
+  let   currentSlide        = 3;
+  let   autoplayInterval;
 
   function createDots() {
     for (let i = 0; i < totalOriginalSlides; i++) {
@@ -45,23 +49,16 @@ $(document).ready(function () {
     resetAutoplay();
   }
 
-  function nextSlide() {
-    currentSlide++;
-    updateCarrusel();
-  }
-
-  function prevSlide() {
-    currentSlide--;
-    updateCarrusel();
-  }
+  function nextSlide() { currentSlide++; updateCarrusel(); }
+  function prevSlide()  { currentSlide--; updateCarrusel(); }
 
   function updateCarrusel() {
-    const slideWidth = 100 / itemsPerView;
+    const slideWidth     = 100 / itemsPerView;
     const translateValue = currentSlide * slideWidth;
 
     $carrusel.css({
       transition: 'transform 0.6s ease-in-out',
-      transform: `translateX(-${translateValue}%)`
+      transform:  `translateX(-${translateValue}%)`
     });
 
     const originalIndex =
@@ -82,14 +79,8 @@ $(document).ready(function () {
     }, 600);
   }
 
-  function startAutoplay() {
-    autoplayInterval = setInterval(nextSlide, 4000);
-  }
-
-  function resetAutoplay() {
-    clearInterval(autoplayInterval);
-    startAutoplay();
-  }
+  function startAutoplay()  { autoplayInterval = setInterval(nextSlide, 4000); }
+  function resetAutoplay()  { clearInterval(autoplayInterval); startAutoplay(); }
 
   $('#carruselPrev').on('click', prevSlide);
   $('#carruselNext').on('click', nextSlide);
@@ -98,50 +89,32 @@ $(document).ready(function () {
   updateCarrusel();
   startAutoplay();
 
-  // ── RESEÑAS ──
+  // ── ESTRELLAS INTERACTIVAS ──
   const $stars = $('#ratingInput .star');
-  let selectedRating = 0;
-
-  $stars.on('click', function () {
-    selectedRating = $(this).data('value');
-    $stars.each(function () {
-      $(this).toggleClass('active', $(this).data('value') <= selectedRating);
-    });
-  });
 
   $stars.on('mouseover', function () {
     const hovered = $(this).data('value');
     $stars.each(function () {
-      $(this).css('color', $(this).data('value') <= hovered ? 'var(--acento)' : '#ddd');
+      $(this).toggleClass('active', $(this).data('value') <= hovered);
     });
   });
 
   $('#ratingInput').on('mouseleave', function () {
     $stars.each(function () {
-      $(this).css('color', $(this).hasClass('active') ? 'var(--acento)' : '#ddd');
+      $(this).toggleClass('active', $(this).data('value') <= calificacionSeleccionada);
     });
   });
 
-  $('#comentario').on('input', function () {
-    $('#charCount').text($(this).val().length + '/200 caracteres');
+  $stars.on('click', function () {
+    calificacionSeleccionada = $(this).data('value'); // variable global de modelo.js
+    $stars.each(function () {
+      $(this).toggleClass('active', $(this).data('value') <= calificacionSeleccionada);
+    });
   });
 
-  $('#formularioResena').on('submit', function (e) {
-    e.preventDefault();
-
-    const nombre = $('#nombre').val();
-
-    if (selectedRating === 0) {
-      alert('Por favor selecciona una calificación');
-      return;
-    }
-
-    alert(`¡Gracias ${nombre}! Tu reseña ha sido publicada.`);
-
-    this.reset();
-    selectedRating = 0;
-    $stars.removeClass('active');
-    $('#charCount').text('0/200 caracteres');
+  // ── CONTADOR DE CARACTERES ──
+  $('#comentario').on('input', function () {
+    $('#charCount').text($(this).val().length + '/200 caracteres');
   });
 
 });
