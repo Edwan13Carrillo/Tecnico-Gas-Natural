@@ -19,20 +19,22 @@ function cargarResenas() {
   fetch(SCRIPT_URL, { redirect: "follow" })
     .then(res => res.json())
     .then(data => {
+      if (!data.ok) {
+        $("#contenedor-resenas").html("<p>No se pudieron cargar las reseñas.</p>");
+        return;
+      }
+
+      const { resenas, total, promedio } = data;
+
       const contenedor = $("#contenedor-resenas");
       contenedor.empty();
-
-      const total    = data.length;
-      const promedio = total > 0
-        ? (data.reduce((sum, r) => sum + r.calificacion, 0) / total).toFixed(1)
-        : "0.0";
 
       const estrellasLlenas = Math.round(promedio);
       $(".resenas-rating .estrellas").html(
         "★".repeat(estrellasLlenas) + "☆".repeat(5 - estrellasLlenas)
       );
       $(".rating-text").html(
-        `${promedio} <span>(${total} reseña${total !== 1 ? "s" : ""})</span>`
+        `${promedio.toFixed(1)} <span>(${total} reseña${total !== 1 ? "s" : ""})</span>`
       );
 
       if (total === 0) {
@@ -40,7 +42,7 @@ function cargarResenas() {
         return;
       }
 
-      data.forEach(resena => {
+      resenas.forEach(resena => {
         const estrellas = "★".repeat(resena.calificacion) + "☆".repeat(5 - resena.calificacion);
         contenedor.append(`
           <div class="resena-card">
@@ -68,7 +70,6 @@ function validarAntesDeEnviar() {
   }
 
   // Evitar envíos múltiples
-  /*
   const ahora = Date.now();
   const ultimoEnvio = localStorage.getItem("ultimoEnvio");
 
@@ -77,18 +78,10 @@ function validarAntesDeEnviar() {
     return false;
   }
   localStorage.setItem("ultimoEnvio", ahora);
-  */
 
   // Validaciones de campos
   const nombre     = $("#nombre").val().trim();
   const comentario = $("#comentario").val().trim();
-
-  console.log(nombre);
-  console.log(nombre.length);
-  console.log(calificacionSeleccionada);
-  console.log(comentario);
-  console.log($("#aceptaTerminos").is(":checked"));
-  
   
   if (calificacionSeleccionada === 0) {
     alert("Por favor selecciona una calificación.");
@@ -147,9 +140,6 @@ $(document).ready(function () {
 
     if (!validarAntesDeEnviar()) return;
 
-    console.log("Todo melo melito");
-    
-    /*
     const datos = {
       nombre:        $("#nombre").val().trim(),
       calificacion:  calificacionSeleccionada,
@@ -168,11 +158,19 @@ $(document).ready(function () {
       .then(res => res.json())
       .then(data => {
         if (data.ok) {
-          alert("¡Gracias por tu reseña! Será publicada pronto.");
+          const mensaje = data.actualizado
+            ? "Tu reseña ya existía y fue actualizada. ✏️"
+            : "¡Gracias por tu reseña! Será publicada pronto. 🎉";
+        
+          alert(mensaje);
           $("#formularioResena")[0].reset();
           calificacionSeleccionada = 0;
           $("#ratingInput .star").removeClass("active");
           $("#charCount").text("0/200 caracteres");
+          cargarResenas();
+        } else {
+
+          alert(data.error || "Hubo un error al enviar. Intenta de nuevo.");
         }
       })
       .catch(() => {
@@ -181,6 +179,5 @@ $(document).ready(function () {
       .finally(() => {
         btn.text("Publicar Reseña").prop("disabled", false);
       });
-    */
   });
 });
