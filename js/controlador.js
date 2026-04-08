@@ -3,7 +3,7 @@
 //  Expone: `calificacionSeleccionada` (global, usada también en vista.js)
 // ─────────────────────────────────────────────
 
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbypkJwD0KbWyr2wYMBIDsFBlxbZ_GAjNR3MCCM8r__09GkozDtHWIWzG3JVIUgKWF2x3w/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyeOs8uld5WjhQTBVXIr_XGypYtVoy6AdoDHzl4r9Zgk0Hy21qNuLr1J8DrCaaYTcGI/exec";
 
 // Variable compartida con script.js para el rating seleccionado
 let calificacionSeleccionada = 0;
@@ -24,9 +24,9 @@ function cargarResenas() {
         return;
       }
 
+      const contenedor = $("#contenedor-resenas");
       const { resenas, total, promedio } = data;
 
-      const contenedor = $("#contenedor-resenas");
       contenedor.empty();
 
       const estrellasLlenas = Math.round(promedio);
