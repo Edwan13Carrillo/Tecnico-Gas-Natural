@@ -45,7 +45,7 @@ function cargarResenas() {
       resenas.forEach(resena => {
         const estrellas = "★".repeat(resena.calificacion) + "☆".repeat(5 - resena.calificacion);
         contenedor.append(`
-          <div class="resena-card">
+          <div class="resena-card mb-2">
             <div class="resena-header">
               <strong>${resena.nombre}</strong>
               <span class="estrellas">${estrellas}</span>
@@ -62,6 +62,14 @@ function cargarResenas() {
     });
 }
 
+const Toast = Swal.mixin({
+  toast: true,
+  position: "bottom-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+});
+
 // ── VALIDACIÓN ──
 function validarAntesDeEnviar() {
   // Honeypot para bots
@@ -74,7 +82,7 @@ function validarAntesDeEnviar() {
   const ultimoEnvio = localStorage.getItem("ultimoEnvio");
 
   if (ultimoEnvio && (ahora - ultimoEnvio < 10000)) {
-    alert("Espera unos segundos antes de enviar otra reseña.");
+    Toast.fire({ icon: "warning", title: "Espera unos segundos antes de enviar otra reseña." });
     return false;
   }
   localStorage.setItem("ultimoEnvio", ahora);
@@ -82,18 +90,17 @@ function validarAntesDeEnviar() {
   // Validaciones de campos
   const nombre     = $("#nombre").val().trim();
   const comentario = $("#comentario").val().trim();
-  
-  if (calificacionSeleccionada === 0) {
-    alert("Por favor selecciona una calificación.");
-    return false;
-  }
 
   if (!nombre || nombre.length > 50 || !/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(nombre)) {
-    alert("El nombre es obligatorio y no puede exceder los 50 caracteres.");
+    Toast.fire({ icon: "warning", title: "El nombre es obligatorio y no puede exceder los 50 caracteres." });
+    return false;
+  }
+  if (calificacionSeleccionada === 0) {
+    Toast.fire({ icon: "warning", title: "Por favor selecciona una calificación." });
     return false;
   }
   if (!comentario || comentario.length > 200) {
-    alert("El comentario es obligatorio y no puede exceder los 200 caracteres");
+    Toast.fire({ icon: "warning", title: "El comentario es obligatorio y no puede exceder los 200 caracteres." });
     return false;
   }
   if (
@@ -102,35 +109,17 @@ function validarAntesDeEnviar() {
     /^[=+\-@]/.test(comentario)  || 
     /(.)\1{4,}/.test(comentario)
   ){
-    alert("El comentario no puede contener enlaces o spam.");
+    Toast.fire({ icon: "warning", title: "El comentario no puede contener enlaces o spam." });
     return false;
   }
 
   if (!$("#aceptaTerminos").is(":checked")) {
-    alert("Debes aceptar los Términos y Condiciones y la Política de Privacidad.");
+    Toast.fire({ icon: "warning", title: "Debes aceptar los Términos y Condiciones y la Política de Privacidad." });
     return false;
   }
-
-  /*
-  const campos = {
-      nombre: $("#nombre"),
-      comentario: $("#comentario")
-  };
-
-  limpiarCampos(campos);
-  */
-  
   return true;
 }
-/*
-function limpiarCampos(campos) {
-  for (const key in campos) {
-    if (campos.hasOwnProperty(key)) {
-      campos[key].val('');
-    }
-  }
-}
-*/
+
 // ── ENVÍO DEL FORMULARIO ──
 $(document).ready(function () {
   cargarResenas();
@@ -162,7 +151,7 @@ $(document).ready(function () {
             ? "Tu reseña ya existía y fue actualizada. ✏️"
             : "¡Gracias por tu reseña! Será publicada pronto. 🎉";
         
-          alert(mensaje);
+          Toast.fire({ icon: "success", title: mensaje });
           $("#formularioResena")[0].reset();
           calificacionSeleccionada = 0;
           $("#ratingInput .star").removeClass("active");
@@ -174,7 +163,7 @@ $(document).ready(function () {
         }
       })
       .catch(() => {
-        alert("Hubo un error al enviar. Intenta de nuevo.");
+        Toast.fire({ icon: "error",   title: "Hubo un error al enviar. Intenta de nuevo." });
       })
       .finally(() => {
         btn.text("Publicar Reseña").prop("disabled", false);
